@@ -1,9 +1,13 @@
 {
-  "name": "greeter-bot",
+  "name": "N00bBot",
   "version": "1.0.0",
   "description": "My own Discord bot",
   "main": "bot.js",
-  "author": "YOUR-NAME-HERE",
+  "author": "N00bKefka",
+  "scripts":
+  {
+	"start": "node bot.js"
+  },
   "dependencies": {
     "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
     "winston": "^3.2.1"
