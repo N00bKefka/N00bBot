@@ -32,6 +32,11 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     to: channelID,
                     message: 'Pong!'
                 });
+            case 'intro':
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'Hello! I am N00b Bot, I am created by Master N00bKefka,'
+                });
             break;
             // Just add any case commands if you want to..
          }
