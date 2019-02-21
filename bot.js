@@ -40,14 +40,14 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 //Sending a message to a channel when user joins
 bot.on("guildMemberAdd", (member) => 
 {
-	/*var role = member.guild.roles.find("name", "newMember");
-	member.addRole(role);*/
+	var role = member.guild.roles.find("name", "User");
+	member.addRole(role);
 	
 	member.guild.channels.get('548064672029474826').send("Well met @" + member.user.username + "! Stay a while and listen...");
 	
 });
 
-//Sending a message to a channel when user joins
+//Sending a message to a channel when user leaves
 bot.on("guildMemberRemove", (member) => 
 {
 	member.guild.channels.get('548090533717737475').send(member.user.username + " did not stayed a while and listen...");
