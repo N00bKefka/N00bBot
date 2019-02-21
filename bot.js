@@ -26,12 +26,6 @@ bot.on('message', function (user, userID, channelID, message, evt) {
        
         args = args.splice(1);
         switch(cmd) {
-            // !ping
-            case 'ping':
-                bot.sendMessage({
-                    to: channelID,
-                    message: 'Pong!'
-                });
             case 'intro':
                 bot.sendMessage({
                     to: channelID,
@@ -41,4 +35,20 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             // Just add any case commands if you want to..
          }
      }
+});
+
+//Sending a message to a channel when user joins
+bot.on("guildMemberAdd", (member) => 
+{
+	/*var role = member.guild.roles.find("name", "newMember");
+	member.addRole(role);*/
+	
+	member.guild.channels.get('548064672029474826').send("Well met @" + member.user.username + "! Stay a while and listen...");
+	
+});
+
+//Sending a message to a channel when user joins
+bot.on("guildMemberRemove", (member) => 
+{
+	member.guild.channels.get('548090533717737475').send(member.user.username + " did not stayed a while and listen...");
 });
