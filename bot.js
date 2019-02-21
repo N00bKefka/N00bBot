@@ -47,7 +47,7 @@ bot.on("guildMemberAdd", (member) =>
 	
 });
 
-//Sending a message to a channel when user joins
+//Sending a message to a channel when user leaves
 bot.on("guildMemberRemove", (member) => 
 {
 	member.guild.channels.get('548090533717737475').send(member.user.username + " did not stayed a while and listen...");
