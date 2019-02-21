@@ -1,0 +1,14 @@
+{
+  "name": "N00bBot",
+  "version": "1.0.0",
+  "description": "N00bKefka's Discord bot",
+  "main": "bot.js",
+  "scripts":
+  {
+    "start": "node bot.js"
+  },
+  "author": "N00bKefka",
+  "dependencies": {
+    "discord.js":"11.1.0"
+  }
+}
