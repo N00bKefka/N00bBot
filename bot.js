@@ -23,6 +23,9 @@ bot.on("message", (message) => {
 	case '!intro':
 		message.channel.send("Hello! I am N00b Bot, I am created by Master N00bKefka!");
 		break;
+	case '!sparksJoy':
+		message.channel.send("(◕ᴗ◕✿) Does this... Sparks joy?! (ʘ‿ʘ✿)");
+		break;
   }
 });
 
@@ -42,4 +45,4 @@ bot.on('guildMemberRemove', member =>
 	member.guild.channels.get('548090533717737475').send(member.user.username + " did not stayed a while and listen...");
 });
 
-bot.login("NTQ4MDY4MjM4MTIzMjA0NjE4.D0_-tA.D-GwEaEx3b3PRYRrNUBZYRWwMTA");
+bot.login(process.env.BOT_TOKEN);
