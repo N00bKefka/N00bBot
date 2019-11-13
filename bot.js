@@ -23,8 +23,11 @@ bot.on("message", (message) => {
 	case '!intro':
 		message.channel.send("Hello! I am N00b Bot, I am created by Master N00bKefka!");
 		break;
-	case '!sparksJoy':
-		message.channel.send("(◕ᴗ◕✿) Does this... Sparks joy?! (ʘ‿ʘ✿)");
+	case '!sparkJoy':
+		message.channel.send("(◕ᴗ◕✿) Does this... Spark joy?! (ʘ‿ʘ✿)");
+		break;
+	case '!moriohChoGreet':
+		message.channel.send("MORI MORI Mori mori... Morioh cho RADIO!~ \nGudo Morning! Ohayo gozaimasu! Morioh cho Radio!");
 		break;
   }
 });
