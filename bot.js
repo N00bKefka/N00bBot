@@ -12,6 +12,8 @@ const Discord = require("discord.js");
 // Initialize Discord Bot
 var bot = new Discord.Client();
 
+const db = require("quick.db");
+
 //console.log(bot);
 bot.on("ready", () => {
   console.log("I am ready!");
@@ -29,6 +31,11 @@ bot.on("message", (message) => {
 	case '!moriohChoGreet':
 		message.channel.send("MORI MORI Mori mori... Morioh cho RADIO!~ \nGudo Morning! Ohayo gozaimasu! Morioh cho Radio!");
 		break;
+  }
+  
+  if(message.author.id == 51533228061757440 && message.content == "HARLO")
+  {
+	  message.channel.send("N00bKefka have said HARLO!");
   }
 });
 
