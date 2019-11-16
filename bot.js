@@ -12,7 +12,22 @@ const Discord = require("discord.js");
 // Initialize Discord Bot
 var bot = new Discord.Client();
 
-//const db = require("quick.db");
+const { Client } = require('pg');
+
+const db = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
+});
+
+db.connect();
+
+db.query('SELECT table_schema,boomer_counter FROM information_schema.tables;', (err, res) => {
+  if (err) throw err;
+  for (let row of res.rows) {
+    console.log(JSON.stringify(row));
+  }
+  db.end();
+});
 
 //console.log(bot);
 bot.on("ready", () => {
