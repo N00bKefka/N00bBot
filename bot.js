@@ -12,7 +12,7 @@ const Discord = require("discord.js");
 // Initialize Discord Bot
 var bot = new Discord.Client();
 
-const db = require("quick.db");
+//const db = require("quick.db");
 
 //console.log(bot);
 bot.on("ready", () => {
