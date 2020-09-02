@@ -173,6 +173,11 @@ bot.on("message", (message) => {
 			case '!roll':
 				let diceCheck = message.content.substring(strSplit[0].length);
 				let result = d20.roll(diceCheck, true);
+				if(result.length === 0)
+				{
+					message.channel.send("Your roll: Unable to read, please try using appropriate symbols or format");
+					break;
+				}
 				let resultNum = 0;
 				let resultStr = "";
 				for(let i = 0; i < result.length; ++i)
