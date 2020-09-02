@@ -67,15 +67,15 @@ bot.on("message", (message) => {
 	}
 	else
 	{
-		switch(strSplit[0])
-		{
-			case '!r':
-			case '!roll':
-				let diceVerbose = message.content.substring(strSplit[0].length);
-				//message.channel.send(d20.roll(diceVerbose));
-				message.channel.send("Testing...");
-				break;
-		}
+		// switch(strSplit[0])
+		// {
+			// case '!r':
+			// case '!roll':
+				// let diceVerbose = message.content.substring(strSplit[0].length);
+				// //message.channel.send(d20.roll(diceVerbose));
+				// message.channel.send("Testing...");
+				// break;
+		// }
 	}
 });
 
