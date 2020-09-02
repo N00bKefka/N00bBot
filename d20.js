@@ -6,9 +6,6 @@
  * @author Michael Enger <mike@thelonelycoder.com>
  * @licence MIT
  */
-(function() {
-"use strict";
-
 export var d20 = {
 
     /**
@@ -106,6 +103,4 @@ if (typeof window != 'undefined') {
     for (var k in d20) {
         exports[k] = d20[k];
     }
-}
-
-})();
+};
