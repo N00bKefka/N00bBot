@@ -129,6 +129,22 @@ var d20 = {
     }
 };
 
+function rollStats()
+{
+	let result = [];
+	for(let i = 0; i < 6; ++i)
+	{
+		let fourDee6s = []
+		for(let j = 0; j < 4; ++j)
+		{
+			fourDee6s.push(Math.floor(Math.random() * 6 + 1));
+		}
+		fourDee6s.sort();
+		result.push(fourDee6s);
+	}
+	return result;
+}
+
 if (typeof window != 'undefined') {
     window.d20 = d20;
 } else if (typeof exports != 'undefined') {
@@ -166,6 +182,11 @@ bot.on("message", (message) => {
 		case '!r':
 		case '!roll':
 			message.channel.send("!r <x>d<y> where <x> is how many dice you want to roll and y is how many face you want to roll.");
+			break;
+		case '!statsRoll':
+			let result = rollStats();
+			
+			message.channel.send("**STATS TEST**");
 			break;
 		}
 	}
