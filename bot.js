@@ -7,6 +7,7 @@ logger.add(new logger.transports.Console, {
 });
 logger.level = 'debug';*/
 const Discord = require("discord.js");
+import {d20} from 'd20';
 //const d20 = required('d20');
 //var auth = require('./auth.json');
 
@@ -67,15 +68,15 @@ bot.on("message", (message) => {
 	}
 	else
 	{
-		// switch(strSplit[0])
-		// {
-			// case '!r':
-			// case '!roll':
-				// let diceVerbose = message.content.substring(strSplit[0].length);
-				// //message.channel.send(d20.roll(diceVerbose));
-				// message.channel.send("Testing...");
-				// break;
-		// }
+		switch(strSplit[0])
+		{
+			case '!r':
+			case '!roll':
+				let diceVerbose = message.content.substring(strSplit[0].length);
+				//message.channel.send(d20.roll(diceVerbose));
+				message.channel.send("Testing...");
+				break;
+		}
 	}
 });
 
