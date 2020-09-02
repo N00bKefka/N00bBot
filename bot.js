@@ -7,6 +7,7 @@ logger.add(new logger.transports.Console, {
 });
 logger.level = 'debug';*/
 const Discord = require("discord.js");
+const d20 = required('d20')
 //var auth = require('./auth.json');
 
 // Initialize Discord Bot
@@ -37,24 +38,45 @@ bot.on("ready", () => {
 });
  
 bot.on("message", (message) => {
-  switch(message.content)
-  {
-	case '!intro':
-		message.channel.send("Hello! I am N00b Bot, I am created by Master N00bKefka!");
-		break;
-	case '!sparkJoy':
-		message.channel.send("(◕ᴗ◕✿) Does this... Spark joy?! (ʘ‿ʘ✿)");
-		break;
-	case '!moriohChoGreet':
-		message.channel.send("MORI MORI Mori mori... Morioh cho RADIO!~ \nGudo Morning! Ohayo gozaimasu! Morioh cho Radio!");
-		break;
-	case '!QueryDB':
-		if(message.author.id == 51533228061757440 && message.content == "!QueryDB")
+	let strSplit = message.content.split(" ");
+
+	if(strSplit.length === 1)
+	{
+		switch(message.content)
 		{
-		  message.channel.send("Database is currently not available.");
+		case '!intro':
+			message.channel.send("Hello! I am N00b Bot, I am created by Master N00bKefka!");
+			break;
+		case '!sparkJoy':
+			message.channel.send("(◕ᴗ◕✿) Does this... Spark joy?! (ʘ‿ʘ✿)");
+			break;
+		case '!moriohChoGreet':
+			message.channel.send("MORI MORI Mori mori... Morioh cho RADIO!~ \nGudo Morning! Ohayo gozaimasu! Morioh cho Radio!");
+			break;
+		case '!QueryDB':
+			if(message.author.id == 51533228061757440 && message.content == "!QueryDB")
+			{
+			  message.channel.send("Database is currently not available.");
+			}
+			break;
+		case '!r':
+		case '!roll':
+			message.channel.send("!r <x>d<y> where <x> is how many dice you want to roll and y is how many face you want to roll.");
+			break;
 		}
 		break;
-  }
+	}
+	else
+	{
+		switch(strSplit[0])
+		{
+			case '!r':
+			case '!roll':
+				let diceVerbose = message.content.substring(strSplit[0].length);
+				d20.roll(diceVerbose);
+				break;
+		}
+	}
 });
 
 //Sending a message to a channel when user joins
