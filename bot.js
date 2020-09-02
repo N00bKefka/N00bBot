@@ -185,8 +185,9 @@ bot.on("message", (message) => {
 			break;
 		case '!statsRoll':
 			let result = rollStats();
+			let printStr = "Your roll: \n**STATS TEST**";
 			
-			message.channel.send("**STATS TEST**");
+			message.channel.send(printStr);
 			break;
 		}
 	}
