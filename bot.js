@@ -73,7 +73,7 @@ bot.on("message", (message) => {
 			case '!roll':
 				let diceVerbose = message.content.substring(strSplit[0].length);
 				//message.channel.send(d20.roll(diceVerbose));
-				message.channel.send(diceVerbose);
+				message.channel.send("Testing...");
 				break;
 		}
 	}
