@@ -91,6 +91,10 @@ var d20 = {
                 }
                 if (match[3]) {
                     modifiers = match[3].match(/([+-]\s*\d+)/g);
+					if(modifiers === null)
+					{
+						return [];
+					}
                     for (var i = 0; i < modifiers.length; i++) {
                         mod += parseInt(modifiers[i].replace(/\s/g, ''));
                     }
