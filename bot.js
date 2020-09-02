@@ -92,7 +92,7 @@ bot.on('guildMemberAdd', member =>
 //Sending a message to a channel when user leaves
 bot.on('guildMemberRemove', member => 
 {
-	member.guild.channels.get('548090533717737475').send(member.user.username + " did not stayed a while and listen...");
+	member.guild.channels.get('548090533717737475').send(member.user.username + " did not stay a while and listen...");
 });
 
 bot.login(process.env.BOT_TOKEN);
