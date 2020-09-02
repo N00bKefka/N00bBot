@@ -177,7 +177,7 @@ bot.on("message", (message) => {
 				let resultStr = "";
 				for(let i = 0; i < result.length; ++i)
 				{
-					resultStr += ' + ('+result[i]+')';
+					resultStr += " + ("+result[i]+")";
 					resultNum += result[i];
 				}
 				resultStr = resultStr.substring(3);
