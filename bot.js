@@ -7,7 +7,7 @@ logger.add(new logger.transports.Console, {
 });
 logger.level = 'debug';*/
 const Discord = require("discord.js");
-import {d20} from 'd20';
+//import {d20} from 'd20';
 //const d20 = required('d20');
 //var auth = require('./auth.json');
 
