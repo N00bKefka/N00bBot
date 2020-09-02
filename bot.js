@@ -181,7 +181,7 @@ bot.on("message", (message) => {
 					resultNum += result[i];
 				}
 				resultStr = resultStr.substring(3);
-				message.channel.send("Your roll:" resultStr + " = " + resultNum);
+				message.channel.send("Your roll: " + resultStr + " = " + resultNum);
 				//message.channel.send("Testing...");
 				break;
 		}
