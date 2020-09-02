@@ -172,8 +172,8 @@ bot.on("message", (message) => {
 			case '!r':
 			case '!roll':
 				let diceVerbose = message.content.substring(strSplit[0].length);
-				//message.channel.send(d20.roll(diceVerbose));
-				message.channel.send("Testing...");
+				message.channel.send(d20.roll(diceVerbose));
+				//message.channel.send("Testing...");
 				break;
 		}
 	}
