@@ -185,12 +185,12 @@ bot.on("message", (message) => {
 			break;
 		case '!statsRoll':
 			let result = rollStats();
-			let printStr = "**Your roll:** \n**STATS TEST**";
+			let printStr = "**Your roll:** \n";
 			let statsTotal = 0;
 			for(let i = 0; i < 6; ++i)
 			{
 				let stats = result[i][1]+result[i][2]+result[i][3];
-				printStr += (i+1)+": [~~"+result[i][0]+"~~, "+result[i][1]+", "+result[i][2]+", "+result[i][3]+"], "+stats+"\n";
+				printStr += (i+1)+": [~~"+result[i][0]+"~~, "+result[i][1]+", "+result[i][2]+", "+result[i][3]+"], **"+stats+"**\n";
 				statsTotal += stats;
 			}
 			printStr += "\n**TOTAL STATS: "+statsTotal+"**";
