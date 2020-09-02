@@ -64,7 +64,6 @@ bot.on("message", (message) => {
 			message.channel.send("!r <x>d<y> where <x> is how many dice you want to roll and y is how many face you want to roll.");
 			break;
 		}
-		break;
 	}
 	else
 	{
