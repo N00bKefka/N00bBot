@@ -14,6 +14,8 @@ const Discord = require("discord.js");
 // Initialize Discord Bot
 var bot = new Discord.Client();
 
+const monika = require("./monika");
+
 /*
 const { Client } = require('pg');
 
@@ -159,7 +161,8 @@ bot.on("ready", () => {
  
 bot.on("message", (message) => {
 	let strSplit = message.content.split(" ");
-
+	let printStr = "";
+	
 	if(strSplit.length === 1)
 	{
 		switch(message.content)
@@ -185,7 +188,7 @@ bot.on("message", (message) => {
 			break;
 		case '!statsRoll':
 			let result = rollStats();
-			let printStr = "**Your roll:** \n";
+			printStr = "**Your roll:** \n";
 			let statsTotal = 0;
 			for(let i = 0; i < 6; ++i)
 			{
@@ -195,6 +198,10 @@ bot.on("message", (message) => {
 			}
 			printStr += "\n**TOTAL STATS: "+statsTotal+"**";
 			
+			message.channel.send(printStr);
+			break;
+		case '!monika':
+			printStr = message.author + " checks for " + monika;
 			message.channel.send(printStr);
 			break;
 		}
