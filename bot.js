@@ -1,3 +1,4 @@
+//require ./monika.js
 /*var Discord = require('discord.io');
 var logger = require('winston');
 // Configure logger settings
@@ -13,7 +14,6 @@ const Discord = require("discord.js");
 
 // Initialize Discord Bot
 var bot = new Discord.Client();
-
 //const monika = require("./monika");
 
 /*
