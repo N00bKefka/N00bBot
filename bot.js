@@ -14,7 +14,7 @@ const Discord = require("discord.js");
 // Initialize Discord Bot
 var bot = new Discord.Client();
 
-const monika = require("./monika");
+//const monika = require("./monika");
 
 /*
 const { Client } = require('pg');
@@ -201,7 +201,7 @@ bot.on("message", (message) => {
 			message.channel.send(printStr);
 			break;
 		case '!monika':
-			printStr = message.author + " checks for " + monika;
+			printStr = message.author + " checks for monika (development in progress)";
 			message.channel.send(printStr);
 			break;
 		}
