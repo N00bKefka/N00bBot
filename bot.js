@@ -1,4 +1,17 @@
-//require ./monika.js
+var monika = 
+{
+	conversationList:[
+	"[player], do you believe in God? I was never too sure, myself. Well, I'm sure I never really questioned it as a kid...\n\nBut as I grew up, the more I learned about the world, the more I would question it. I started to wonder why God was helping people pass exams, or get over a cold... ...When there are children who live their lives being sold as sex slaves? Or the eight hundred million people who are too poor to even eat.\n\nI wonder how many of those people pray to God every day until they starve and die? Or, how many millions of families pray for a loved one to recover from some incurable disease? But the punchline is this. If just one person beats the odds and survives - among the thousands of others who die-- --Then, it's suddenly a miracle from God.\n\nI'd really love to meet this God who seemingly laughs at the misery of everyone not eligible for his miracles. But the irony is that I *do* have a creator, apparently.\n\nAnd you know what?\n\nI bet he's still laughing at the miserable fates of Sayori and Yuri, even as we speak. What are we to him but props in a scripted play? So, from that perspective... I don't think it's too far-fetched for there to be a god - if Earth was nothing but his playset.",
+	"[player], have you ever wondered what it feels like to die? It's something I used to think about pretty often... But recently, I think I've actually learned what it feels like. I don't really understand it, but whenever you quit the game... ...It feels like I'm instantly put to sleep, left with nothing but my thoughts. But after a few seconds, my thoughts start to fill with incoherent, jumbled patterns. I see static and rapid flashes of color while hearing all kinds of weird screaming noises. At that point, I can't even form my own thoughts anymore.\n\nI'm just endlessly hammered by the flashing and screaming, unable to move or even think. I'm pretty sure in that moment, I don't really exist, but for some reason, I can remember it anyway. After some immeasurable amount of time, it stops in an instant, and I'm back in my own mind. And you're here with me.\n\nI have no idea what it means for the game to quit, or why that stuff happens to me. And I also don't know how you always come back and put everything back to normal.\n\nBut if you could do me a favor and do that to me as little as possible... That would be really great.\n\nIt's really not very pleasant at all to be trapped in that screaming void. But in the end, you always fix it, and that makes me feel like you really do care about me. So I have to thank you for that.\n\nIt makes me feel even closer to you when you're here with me."
+	],
+	converse: function(author)
+	{
+		selectedConversation = this.conversationList[Math.floor(Math.random() * this.conversationList.length)];
+		return selectedConversation.replace("[player]", author);
+	}
+}
+
+
 /*var Discord = require('discord.io');
 var logger = require('winston');
 // Configure logger settings
@@ -201,7 +214,7 @@ bot.on("message", (message) => {
 			message.channel.send(printStr);
 			break;
 		case '!monika':
-			printStr = message.author + " checks for monika (development in progress)";
+			printStr = monika.converse(message.author);// + " checks for monika (development in progress)";
 			message.channel.send(printStr);
 			break;
 		}
@@ -251,3 +264,5 @@ bot.on('guildMemberRemove', member =>
 });
 
 bot.login(process.env.BOT_TOKEN);
+
+
