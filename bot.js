@@ -106,6 +106,7 @@ logger.add(new logger.transports.Console, {
 });
 logger.level = 'debug';*/
 const Discord = require("discord.js");
+const newUsers = new Discord.Collection();
 //import {d20} from 'd20';
 //const d20 = required("d20");
 //var auth = require('./auth.json');
@@ -334,9 +335,10 @@ bot.on("message", (message) => {
 //Sending a message to a channel when user joins
 bot.on('guildMemberAdd', member => 
 {
+	member.guild.channels.get('548064672029474826').send("On user join test");
 	var role = member.guild.roles.find("name", "User");
 	member.addRole(role);
-	
+	newUsers.set(member.id, member.user);
 	member.guild.channels.get('548064672029474826').send("Well met <@"+member.user.id+">! Stay a while and listen...");
 	
 });
@@ -344,6 +346,7 @@ bot.on('guildMemberAdd', member =>
 //Sending a message to a channel when user leaves
 bot.on('guildMemberRemove', member => 
 {
+	if(newUsers.has(member.id)) newUsers.delete(member.id);
 	member.guild.channels.get('548090533717737475').send(member.user.username + " did not stay a while and listen...");
 });
 
