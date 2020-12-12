@@ -23,6 +23,8 @@
     "I'll go ahead and shut up now... ciBzaGFja2xlcyBkaWcgaW50byBvdXIgY2FsbG91cyBmbGVzaC4="
 */
 
+const VERSION = "v1.0"
+
 var monika = 
 {
 	conversationList:[
@@ -266,6 +268,12 @@ bot.on("message", (message) => {
 	{
 		switch(message.content)
 		{
+		case '!version':
+			if(message.author.id == 51533228061757440)
+			{
+				message.channel.send(VERSION);
+			}
+			break;
 		case '!intro':
 			message.channel.send("Hello! I am N00b Bot, I am created by Master N00bKefka!");
 			break;
