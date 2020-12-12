@@ -339,7 +339,7 @@ bot.on('guildMemberAdd', member =>
 	var role = member.guild.roles.find("name", "User");
 	member.addRole(role);
 	newUsers.set(member.id, member.user);
-	member.guild.channels.get('548064672029474826').send("Well met <@"+member.user.id+">! Stay a while and listen...");
+	bot.channels.get('548064672029474826').send("Well met <@"+member.user.id+">! Stay a while and listen...");
 	
 });
 
@@ -347,7 +347,7 @@ bot.on('guildMemberAdd', member =>
 bot.on('guildMemberRemove', member => 
 {
 	if(newUsers.has(member.id)) newUsers.delete(member.id);
-	member.guild.channels.get('548090533717737475').send(member.user.username + " did not stay a while and listen...");
+	bot.channels.get('548090533717737475').send(member.user.username + " did not stay a while and listen...");
 });
 
 bot.login(process.env.BOT_TOKEN);
