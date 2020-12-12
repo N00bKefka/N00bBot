@@ -23,7 +23,7 @@
     "I'll go ahead and shut up now... ciBzaGFja2xlcyBkaWcgaW50byBvdXIgY2FsbG91cyBmbGVzaC4="
 */
 
-const VERSION = "v1.0"
+const VERSION = "v1.01"
 
 var monika = 
 {
