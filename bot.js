@@ -343,7 +343,6 @@ bot.on("message", (message) => {
 //Sending a message to a channel when user joins
 bot.on('guildMemberAdd', member => 
 {
-	member.guild.channels.get('548064672029474826').send("On user join test");
 	var role = member.guild.roles.find("name", "User");
 	member.addRole(role);
 	newUsers.set(member.id, member.user);
